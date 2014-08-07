@@ -1,0 +1,778 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Untitled Document</title>
+    <script type="text/javascript">
+	<!--
+    	function toggle_visibility(id) {
+       		var e = document.getElementById(id);
+       		if(e.style.display == 'none'){
+          		e.style.display = '';
+			}
+       		else{
+          		e.style.display = 'none';
+			}
+    	}
+		function toggle_layout(show, hide) {
+       		var a = document.getElementsByClassName(show);
+			var b = document.getElementsByClassName(hide);
+			var c = document.getElementsByClassName("extended");
+			for(var i=0; i<c.length; i++){
+				c[i].style.display = "none";
+			}
+			for(var i=0; i<b.length; i++){
+				b[i].style.display = "none";
+			}
+			for(var i =0; i<a.length; i++){
+       			a[i].style.display='';	
+			}
+    	}
+		function swap(id){
+			var desc = "d"+id;	
+			var price = "p"+id;
+			var a = document.getElementById(desc);
+			var b = document.getElementById(price);
+       		if(a.style.display == 'none'){
+          		a.style.display = '';
+				b.style.display = 'none';
+			}
+       		else{
+          		a.style.display = 'none';
+				b.style.display = '';
+			}
+		}
+	//-->
+	</script>
+    <style type="text/css">
+		.container{
+			margin-left:auto;
+			margin-right:auto;
+			width: 800px;
+		}
+		.header{
+			width:100%;
+			border-top-left-radius:15px;
+			border-top-right-radius:15px;
+		}
+		.logo{
+			background-color:white;
+			color:black;
+			font:Arial, Helvetica, sans-serif;
+			font-size:150%;
+			text-align:left;	
+			padding-left:20px;
+			padding-top:10px;
+			padding-bottom:10px;
+			border-top-left-radius:15px;
+			border-top-right-radius:15px;
+		}
+		.layouts{
+			background-color:#1459b8;	
+			padding:0px;
+			text-align:right;
+		}
+		.layouts img{
+			padding-top:5px;
+			padding-bottom:0px;
+			padding-right:10px;
+		}
+		.sidebar{
+			width:20%;
+			background-color:#1459b8;
+			position:relative;
+			float:left;
+			border-bottom-left-radius:15px;
+		}
+		.sidebar ul{
+			list-style-type:none;
+			padding-left:5px;
+			text-align:right;
+		}
+		.sidebar .title{
+			width: 100%;
+			background-color:#30bff7;
+			text-align: right;
+			font-size:150%;
+			padding-right:5px;
+			
+		}
+		.sidebar .title a:link{
+			color:black;
+			text-decoration:none;
+		}
+		.sidebar .title a:visited{
+			color:black;
+			text-decoration:none;
+		}
+		.makeOptions{
+			color:white;	
+		}
+		.modelOptions{
+			color:white;	
+		}
+		.rangeItem{
+			margin-right:5px;
+			color:white;
+		}
+		.content{
+			width:78%;
+			padding-left:5px;
+			padding-top:5px;
+			padding:right:2.5%;
+			
+			position:relative;
+			float:right;	
+		}
+		.post{
+			background-color:#1459b8;
+			position:relative;
+			width:200px;
+			height:200px;	
+		}
+		.carTitle{
+			font-size:18px;	
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-o-text-overflow: ellipsis;
+			white-space: nowrap;
+			width: 90%;
+		}
+		.mileage{
+			font-size:12px;
+		}
+		.pages{
+			width:100%;
+			color:white;
+			background-color:black;	
+		}
+		.side{
+			position:absolute;
+			left:0%;
+			top:0%;
+			width: 25%;
+			height:100%;
+			padding:0%;
+		}
+		.mainPic{
+			position:absolute;
+			left:25%;
+			top:0%;	
+			width:75%;
+			height:50%;
+			padding:0%;
+		}
+		.prices{
+			position:absolute;
+			left:25%;
+			top:75%;	
+			width:75%;
+			height:25%;
+			padding:0%;
+		}
+		.prices a:link{
+			color:black;
+			text-decoration:none;
+		}
+		
+		.prices a:visited{
+			color:black;
+			text-decoration:none;
+		}
+		.prices .cl{
+			text-align:center;
+			background-color:white;
+		}
+		.prices .kbb{
+			text-align:center;
+			background-color:yellow;
+		}
+		.lPrices .cl{
+			padding-top:3px;
+			padding-bottom:3px;
+			padding-left:10px;
+			padding-right:10px;
+			text-align:center;
+			background-color:white;
+		}
+		.lPrices .kbb{
+			padding-top:3px;
+			padding-bottom:3px;
+			padding-left:10px;
+			padding-right:10px;
+			text-align:center;
+			background-color:#FC0;
+		}
+		.name{
+			position:absolute;
+			left:28%;
+			top:53%;	
+			width:75%;
+			height:25%;
+			padding:0%;
+		}
+		.name a:link{
+			color:white;
+			text-decoration:none;
+		}
+		.name a:visited{
+			color:white;
+			text-decoration:none;
+		}
+		.saved{
+			text-align:center;
+			background-color:#072E49;
+			position:relative;
+			margin-bottom:0px;
+			margin-top:0px;
+		}
+		.saved a:link{
+			color:white;
+			text-decoration:none;	
+		}
+		.saved a:visited{
+			color:white;
+			text-decoration:none;	
+		}
+		.extended{
+			vertical-align:top;	
+		}
+		.imgslider{
+			position:relative;
+			float:left;	
+		}
+		.description{
+			position:relative;
+			float:left;
+			width:250px;
+			height:195px;
+			padding-left:5px;
+			padding-top:5px;
+			overflow:scroll;
+			vertical-align:top;
+		}
+		.priceShift{
+			position:relative;
+			float:left;
+			padding-left:10px;
+			width: 250px;
+			height: 200px;
+		}
+		.options{
+			position:relative;
+			float:right;
+			padding:0px;
+			vertical-align:top;
+		}
+		.lPost{
+			background-color:#1459b8;
+			width:100%;	
+		}
+		.lLogo{
+			position:relative;
+			float:left;	
+		}
+		.lName{
+			position:relative;
+			float:left;	
+			padding-left:10px;
+		}
+		.lCarTitle{
+			font-size:24px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-o-text-overflow: ellipsis;
+			white-space: nowrap;
+			width:100%;
+		}
+		.lMileage{
+			padding-left:5px;	
+		}
+		.lPrices{
+			position:relative;
+			float:left;	
+			padding-left:10px;
+		}
+		.lPrices a:link{
+			color:black;
+			text-decoration:none;	
+		}
+		.lPrices a:visited{
+			color:black;
+			text-decoration:none;	
+		}
+		.lInfo{
+			postion:relative;
+			float:right;	
+		}
+	</style>
+    
+</head>
+
+<body>
+	<div class="container">
+      <div class="header">
+          <div class="logo">
+              <h1><em>AutoCraig</em></h1>
+          </div>
+          <div class="layouts">
+              <a href="#" onclick="toggle_layout('grid', 'lPost');" ><img src="grid.png" width="20px" height="20px" alt="grid"/></a>
+              <a href="#" onclick="toggle_layout('lPost', 'grid');" ><img src="list.png" width="20px" height="20px" alt="list"/></a>
+          </div>
+      </div>
+      <div class="sidebar">
+          <ul>
+              <li><div class="title"><a href="#" onclick="toggle_visibility('makeO');">Make</a></div>
+              	<div class="makeOptions" id="makeO" style="display:none">
+                  Acura<input type="checkbox" value="Acura" /><br />
+                  Nissan<input type="checkbox" value="Nissan" /><br />
+                  Ford<input type="checkbox" value="Ford" />
+                </div>
+                <br />
+              </li>
+              <li><div class="title"><a href="#" onclick="toggle_visibility('modelO');">Model</a></div>
+              	<div class="modelOptions" id="modelO" style="display:none">
+                  Acura<input type="checkbox" value="Acura" /><br />
+                  Nissan<input type="checkbox" value="Nissan" /><br />
+                  Ford<input type="checkbox" value="Ford" />
+                </div>
+                <br />
+              </li>
+              <li><div class="title"><a href="#" onclick="toggle_visibility('styleO');">Style</a></div>
+              		<div class="modelOptions" id="styleO" style="display:none">
+                 		 Pickup<input type="checkbox" value="Acura" /><br />
+                 		 Sadan<input type="checkbox" value="Nissan" /><br />
+               		     Minivan<input type="checkbox" value="Ford" />
+               		</div>
+                  <br />
+              </li>
+              <li><div class="title"><a href="#" onclick="toggle_visibility('yearO');">Year</a></div>
+              		<div class="rangeItem" id="yearO" style="display:none">
+                  		Start: <input type="text" value="e.g. 1980" style="width: 60%; color: #999; text-align:right;"/><br />
+                  		End: <input type="text" value="e.g. 2004" style="width: 60%; color: #999; text-align:right;"/>
+                  </div>
+                  <br />
+              </li>
+              <li><div class="title"><a href="#" onclick="toggle_visibility('priceO');">Price</a></div>
+              		<div class="rangeItem" id="priceO" style="display:none">
+                  		Low: $<input type="text" value="e.g. 500" style="width: 60%; color: #999; text-align:right;"/><br />
+                  		High: $<input type="text" value="e.g. 20000" style="width: 60%; color: #999; text-align:right;"/>
+                  </div>
+                  <br />
+              </li>
+          </ul>
+      </div>
+      <div class="content">
+          <div class="board">
+              <table width="100%" class="gridPosts">
+                  <tr class="grid">
+                      <td>
+                          <div class="post" width="200px" height="200px">
+                              <div class="side" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="auto.png" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" />
+                                  </a>
+                              </div>
+                              <div class="mainPic" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="Lambo.jpg" alt="car" width="150px" height="100px"/>
+                                  </a>
+                              </div>
+                              <div class="name" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <div class="carTitle">Nissan Ultima - Year</div>
+                                  <div class="mileage">Mileage: 9001</div>
+                                  </a>
+                              </div>
+                              
+                              <div class="prices" id="component">
+                                  <div class="cl"><a href="#">CL: $99999.99</a></div>
+                                  <div class="kbb"><a href="#">KB: $99999.99</a></div>
+                              </div>
+                          </div>
+                      </td>
+                       <td>
+                          <div class="post" width="200px" height="200px">
+                              <div class="side" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="auto.png" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" />
+                                  </a>
+                              </div>
+                              <div class="mainPic" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="Lambo.jpg" alt="car" width="150px" height="100px"/>
+                                  </a>
+                              </div>
+                              <div class="name" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <div class="carTitle">Nissan Ultima - Year</div>
+                                  <div class="mileage">Mileage: 9001</div>
+                                  </a>
+                              </div>
+                              
+                              <div class="prices" id="component">
+                                  <div class="cl"><a href="#">CL: $99999.99</a></div>
+                                  <div class="kbb"><a href="#">KB: $99999.99</a></div>
+                              </div>
+                          </div>
+                      </td>
+                       <td>
+                          <div class="post" width="200px" height="200px">
+                              <div class="side" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="auto.png" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" />
+                                  </a>
+                              </div>
+                              <div class="mainPic" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="Lambo.jpg" alt="car" width="150px" height="100px"/>
+                                  </a>
+                              </div>
+                              <div class="name" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <div class="carTitle">Nissan Ultima - Year</div>
+                                  <div class="mileage">Mileage: 9001</div>
+                                  </a>
+                              </div>
+                              
+                              <div class="prices" id="component">
+                                  <div class="cl"><a href="#">CL: $99999.99</a></div>
+                                  <div class="kbb"><a href="#">KB: $99999.99</a></div>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr class="extended" id="1" style="display:none;">
+                  	<td colspan="4">
+                    	<div class="imgslider">
+                        	<img src="Lambo.jpg" width="300px" height="200px" alt="car"/>
+                        </div>
+                        <div class="description" id="d1">
+                        	Do you like speed? style? comfort? Well this car has got it all!
+                        </div>
+                        <div class="priceShift" id="p1" style="display:none;">
+                        	<img src="black.png" alt="engine" width="50px" height="50px"/>
+                            <img src="black.png" alt="engine" width="50px" height="50px"/>
+                            <img src="black.png" alt="engine" width="50px" height="50px"/><br />
+                            <img src="black.png" alt="engine" width="50px" height="50px"/>
+                            <img src="black.png" alt="engine" width="50px" height="50px"/>
+                            <img src="black.png" alt="engine" width="50px" height="50px"/>
+                            
+                        </div>
+                        <div class="options">
+                        	<img alt="star" src="star.png" width="50px" height="50px"/><br />
+                            <a href="#" onclick="swap('1');"><img alt="swap" src="black.png" width="50px" height="50px"/></a><br />
+                            <img alt="clLink" src="black.png" width="50px" height="50px"/><br />
+                            <img alt="bbLink" src="black.png" width="50px" height="50px"/>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr class="grid">
+                      <td>
+                          <div class="post" width="200px" height="200px">
+                              <div class="side" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="auto.png" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" />
+                                  </a>
+                              </div>
+                              <div class="mainPic" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="Lambo.jpg" alt="car" width="150px" height="100px"/>
+                                  </a>
+                              </div>
+                              <div class="name" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <div class="carTitle">Nissan Ultima - Year</div>
+                                  <div class="mileage">Mileage: 9001</div>
+                                  </a>
+                              </div>
+                              
+                              <div class="prices" id="component">
+                                  <div class="cl"><a href="#">CL: $99999.99</a></div>
+                                  <div class="kbb"><a href="#">KB: $99999.99</a></div>
+                              </div>
+                          </div>
+                      </td>
+                       <td>
+                          <div class="post" width="200px" height="200px">
+                              <div class="side" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="auto.png" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" />
+                                  </a>
+                              </div>
+                              <div class="mainPic" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="Lambo.jpg" alt="car" width="150px" height="100px"/>
+                                  </a>
+                              </div>
+                              <div class="name" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <div class="carTitle">Nissan Ultima - Year</div>
+                                  <div class="mileage">Mileage: 9001</div>
+                                  </a>
+                              </div>
+                              
+                              <div class="prices" id="component">
+                                  <div class="cl"><a href="#">CL: $99999.99</a></div>
+                                  <div class="kbb"><a href="#">KB: $99999.99</a></div>
+                              </div>
+                          </div>
+                      </td>
+                       <td>
+                          <div class="post" width="200px" height="200px">
+                              <div class="side" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="auto.png" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" />
+                                  </a>
+                              </div>
+                              <div class="mainPic" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="Lambo.jpg" alt="car" width="150px" height="100px"/>
+                                  </a>
+                              </div>
+                              <div class="name" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <div class="carTitle">Nissan Ultima - Year</div>
+                                  <div class="mileage">Mileage: 9001</div>
+                                  </a>
+                              </div>
+                              
+                              <div class="prices" id="component">
+                                  <div class="cl"><a href="#">CL: $99999.99</a></div>
+                                  <div class="kbb"><a href="#">KB: $99999.99</a></div>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr class="extended">
+                  	<td colspan="4">
+                    	<div class="imgslider">
+                        	<img src="" width="300px" height="200px" alt="car"/>
+                        </div>
+                        <div class="description">
+                        
+                        </div>
+                        <div class="priceShift">
+                        	<img src="" alt="engine" width="50px" height="50px"/>
+                            <img src="" alt="engine" width="50px" height="50px"/>
+                            <img src="" alt="engine" width="50px" height="50px"/><br />
+                            <img src="" alt="engine" width="50px" height="50px"/>
+                            <img src="" alt="engine" width="50px" height="50px"/>
+                            <img src="" alt="engine" width="50px" height="50px"/>
+                            
+                        </div>
+                        <div class="options">
+                        	<img alt="star" src="star.png" width="50px" height="50px"/><br />
+                            <img alt="swap" src="" width="50px" height="50px"/><br />
+                            <img alt="clLink" src="" width="50px" height="50px"/><br />
+                            <img alt="bbLink" src="" width="50px" height="50px"/>
+                        </div>
+                    </td>
+                  </tr>
+              </table>
+              <table class="listPosts" width="100%">
+              		<tr class="lPost">
+                    	<td>
+                    		<div >
+                    			<div class="lLogo">
+                  		      		<img src="" alt="logo" width="50px" height="50px" />
+                        		</div>
+                        		<div class="lName">
+                        			<div class="lCarTitle">Nissan Ultima - 2004</div>
+                           			<div class="lMileage">Mileage: 9001</div>
+                       			</div>
+                        		<div class="lPrices">
+                  	    	  		<div class="cl"><a href="">CL Price</a></div>
+                                    <div class="kbb"><a href="">KBB Price</a></div>
+                    	    	</div>
+                        		<div class="lInfo">
+                        			<img src="" width="50px" height="50px"/>
+                            		<img src="" width="50px" height="50px" />
+                            		<img src="" width="50px" height="50px" />
+                            		<img src="" width="50px" height="50px" />
+                            	</div>
+                        	</div>
+                         </td>
+                    </tr>
+                    <tr class="extended">
+                  		<td>
+                    	  <div class="imgslider">
+                     		   	<img src="" width="300px" height="200px" alt="car"/>
+                      	  </div>
+                      	  <div class="description">
+                       		 
+                      	  </div>
+                      	  <div class="priceShift">
+                     		  <img src="" alt="engine" width="50px" height="50px"/>
+                     	      <img src="" alt="engine" width="50px" height="50px"/>
+                          	  <img src="" alt="engine" width="50px" height="50px"/><br />
+                      	      <img src="" alt="engine" width="50px" height="50px"/>
+                          	  <img src="" alt="engine" width="50px" height="50px"/>
+                           	  <img src="" alt="engine" width="50px" height="50px"/>
+                            
+                          </div>
+                          <div class="options">
+                        	  <img alt="star" src="" width="50px" height="50px"/><br />
+                              <img alt="swap" src="" width="50px" height="50px"/><br />
+                              <img alt="clLink" src="" width="50px" height="50px"/><br />
+                              <img alt="bbLink" src="" width="50px" height="50px"/>
+                          </div>
+                       </td>
+                  </tr>
+              </table>
+          </div>
+          <div class="pages">
+              <table width="100%">
+                  <tr>
+                      <td style="text-align:left">
+                          &lt;&lt; Back
+                      </td>
+                      <td style="text-align:center;">
+                          Page 1 of 10
+                      </td>
+                      <td style="text-align:right;">
+                          Next &gt;&gt;
+                      </td>
+                  </tr>
+              </table>
+          </div>
+          <div class="saved">
+              	<a href="#savedPosts" onClick="toggle_visibility('savedPosts')">View Saved Posts</a>
+          </div>
+          <div class="board" id="savedPosts" style="display:none;">	
+          		<table width="100%" class="gridPosts">
+                  <tr class="grid">
+                      <td>
+                          <div class="post" width="200px" height="200px">
+                              <div class="side" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="auto.png" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" />
+                                  </a>
+                              </div>
+                              <div class="mainPic" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="Lambo.jpg" alt="car" width="150px" height="100px"/>
+                                  </a>
+                              </div>
+                              <div class="name" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <div class="carTitle">Nissan Ultima - Year</div>
+                                  <div class="mileage">Mileage: 9001</div>
+                                  </a>
+                              </div>
+                              
+                              <div class="prices" id="component">
+                                  <div class="cl"><a href="#">CL: $99999.99</a></div>
+                                  <div class="kbb"><a href="#">KB: $99999.99</a></div>
+                              </div>
+                          </div>
+                      </td>
+                       <td>
+                          <div class="post" width="200px" height="200px">
+                              <div class="side" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="auto.png" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" />
+                                  </a>
+                              </div>
+                              <div class="mainPic" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="Lambo.jpg" alt="car" width="150px" height="100px"/>
+                                  </a>
+                              </div>
+                              <div class="name" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <div class="carTitle">Nissan Ultima - Year</div>
+                                  <div class="mileage">Mileage: 9001</div>
+                                  </a>
+                              </div>
+                              
+                              <div class="prices" id="component">
+                                  <div class="cl"><a href="#">CL: $99999.99</a></div>
+                                  <div class="kbb"><a href="#">KB: $99999.99</a></div>
+                              </div>
+                          </div>
+                      </td>
+                       <td>
+                          <div class="post" width="200px" height="200px">
+                              <div class="side" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="auto.png" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" /><br />
+                                  <img src="" width="50px" height="50px" />
+                                  </a>
+                              </div>
+                              <div class="mainPic" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <img src="Lambo.jpg" alt="car" width="150px" height="100px"/>
+                                  </a>
+                              </div>
+                              <div class="name" id="component">
+                              	<a href="#" onclick="toggle_visibility('1');">
+                                  <div class="carTitle">Nissan Ultima - Year</div>
+                                  <div class="mileage">Mileage: 9001</div>
+                                  </a>
+                              </div>
+                              
+                              <div class="prices" id="component">
+                                  <div class="cl"><a href="#">CL: $99999.99</a></div>
+                                  <div class="kbb"><a href="#">KB: $99999.99</a></div>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr class="extended">
+                  	<td colspan="4">
+                    	<div class="imgslider">
+                        	<img src="" width="300px" height="200px" alt="car"/>
+                        </div>
+                        <div class="description">
+                        
+                        </div>
+                        <div class="priceShift">
+                        	<img src="" alt="engine" width="50px" height="50px"/>
+                            <img src="" alt="engine" width="50px" height="50px"/>
+                            <img src="" alt="engine" width="50px" height="50px"/><br />
+                            <img src="" alt="engine" width="50px" height="50px"/>
+                            <img src="" alt="engine" width="50px" height="50px"/>
+                            <img src="" alt="engine" width="50px" height="50px"/>
+                            
+                        </div>
+                        <div class="options">
+                        	<img alt="star" src="star.png" width="50px" height="50px"/><br />
+                            <img alt="swap" src="" width="50px" height="50px"/><br />
+                            <img alt="clLink" src="" width="50px" height="50px"/><br />
+                            <img alt="bbLink" src="" width="50px" height="50px"/>
+                        </div>
+                    </td>
+                  </tr>
+              </table>
+          </div>
+      </div>
+    </div>
+</body>
+</html>

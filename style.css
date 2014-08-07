@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+.container{
+	margin-left:auto;
+	margin-right:auto;
+	width: 800px;
+	background-color:#A5C8EB;
+}
